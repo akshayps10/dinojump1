@@ -1,0 +1,146 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #ffffff;
+}
+
+#game {
+    width: 80%;
+    max-width: 1200px;
+    height: 360px;
+    border: 1px solid #000;
+    position: relative;
+    overflow: hidden;
+    background: url('https://cdn.mobygames.com/74270764-bf09-11ed-9c42-02420a000140.webp') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+#character {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url('dinoser.png');
+    background-size: cover;
+    transition: bottom 0.5s ease-out;
+}
+
+.animate {
+    animation: jump 1.5s ease;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+/* Block styles */
+#block {
+    width: 30px;
+    height: 50px;
+    background-image: url('dino.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.animate-block {
+    animation: block 1.5s linear infinite;
+}
+
+@keyframes block {
+    0% { right: -20px; }
+    100% { right: 100%; }
+}
+
+
+@keyframes block {
+    0% { right: -20px; }
+    100% { right: 100%; }
+}
+
+/* Animate character when jumping */
+#character.animate {
+    bottom: 90px; 
+}
+
+/* Timer styles */
+#timer {
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    font-size: 20px; 
+}
+
+.stroked-text {
+    color: #333;
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
+}
+
+/* Headings and lead text styles */
+h1 {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+p.lead {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Start button styles */
+#startButton {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 480px) {
+    #game {
+        height: 150px;
+    }
+
+    #character {
+        width: 30px;
+        height: 30px;
+    }
+
+    #block {
+        width: 15px;
+        height: 25px;
+    }
+
+    #timer {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p.lead {
+        font-size: 0.875rem;
+    }
+
+    #startButton {
+        font-size: 0.875rem;
+        padding: 6px 12px;
+    }
+}
